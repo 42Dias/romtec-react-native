@@ -26,7 +26,7 @@ export function Welcome(){
           source={IllustrationImg} 
           style={styles.image} 
           resizeMode="cover"
-        />
+        /> 
 
         <View style={styles.content}>
           <Text style={styles.title}>

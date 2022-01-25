@@ -10,29 +10,20 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 500,
+    height: 450,
     position: 'relative',
-    bottom: 69
+    bottom: 140,
   },
   content: {    
-    marginTop: -40,    
+    marginTop: -120,    
     paddingHorizontal: 50
   },
   title: {
     color: theme.colors.heading,
     textAlign: 'center',
     fontSize: 40,
-    marginBottom: 16,   
     fontFamily: theme.fonts.title700,
     lineHeight: 40 
-  },
-  subtitle: {
-    color: theme.colors.heading,
-    fontSize: 15,
-    textAlign: 'center',
-    marginBottom: 64,
-    fontFamily: theme.fonts.title500,
-    lineHeight: 25
   },
   containerButton: {
     width: '100%',
@@ -40,7 +31,7 @@ export const styles = StyleSheet.create({
     backgroundColor: theme.colors.yellow,
     borderRadius: 8,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   titleButton: {
     flex: 1,
