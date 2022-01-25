@@ -10,7 +10,9 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 360,
+    height: 500,
+    position: 'relative',
+    bottom: 69
   },
   content: {    
     marginTop: -40,    

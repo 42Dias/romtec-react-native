@@ -32,7 +32,7 @@ export function SignIn(){
         <View style={styles.content}>
           <Text style={styles.title}>
             Bem-vindo {'\n'}
-            a Romtec
+            a Romtec 🔧
           </Text>
 
           <RectButton 
