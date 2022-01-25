@@ -8,6 +8,7 @@ import { Home } from '../screens/Home';
 import { AppointmentDetails } from '../screens/AppointmentDetails';
 import { AppointmentCreate } from '../screens/AppointmentCreate';
 import { Welcome } from '../screens/Welcome';
+import { Login } from '../screens/Login';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -16,15 +17,14 @@ export function AppRoutes() {
 
     <Navigator
       headerMode="none"
-      screenOptions={{
-        // cardStyle: {
-        //   backgroundColor: theme.colors.secondary100
-        // }
-      }}
     > 
       <Screen 
         name="Welcome"
         component={Welcome}
+      />
+      <Screen 
+        name="Login"
+        component={Login}
       />
       <Screen 
         name="Home"

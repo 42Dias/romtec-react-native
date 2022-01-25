@@ -16,7 +16,7 @@ export function Welcome(){
   const navigation = useNavigation();
 
   function LoginPage() {
-    navigation.navigate('Home')
+    navigation.navigate('Login')
   }
 
   return(
