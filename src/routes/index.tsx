@@ -8,7 +8,7 @@ export function Routes(){
 
   return(
     <NavigationContainer>
-     <SignIn />
+     <AppRoutes />
     </NavigationContainer>
   )
 }
