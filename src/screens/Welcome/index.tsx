@@ -12,7 +12,7 @@ import { styles } from './styles';
 import { Background } from '../../components/Background';
 import { useNavigation } from '@react-navigation/native';
 
-export function SignIn(){
+export function Welcome(){
   const navigation = useNavigation();
 
   function LoginPage() {

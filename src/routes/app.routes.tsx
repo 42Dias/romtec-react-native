@@ -4,9 +4,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { theme } from '../global/styles/theme';
 
 import { Home } from '../screens/Home';
-import { SignIn } from '../screens/SignIn';
+
 import { AppointmentDetails } from '../screens/AppointmentDetails';
 import { AppointmentCreate } from '../screens/AppointmentCreate';
+import { Welcome } from '../screens/Welcome';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -22,8 +23,8 @@ export function AppRoutes() {
       }}
     > 
       <Screen 
-        name="SignIn"
-        component={SignIn}
+        name="Welcome"
+        component={Welcome}
       />
       <Screen 
         name="Home"
