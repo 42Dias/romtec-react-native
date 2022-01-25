@@ -2,22 +2,17 @@ import React from 'react';
 import { 
   View, 
   Text, 
-  Image,
-  Button,
+  Image
 } from 'react-native';
 import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
+
 import IllustrationImg from '../../assets/illustration.png';
+
 import { styles } from './styles';
 
 import { Background } from '../../components/Background';
-import { useNavigation } from '@react-navigation/native';
 
-export function SignIn(){
-  const navigation = useNavigation();
-
-  function LoginPage() {
-    navigation.navigate('Home')
-  }
+export function Login (){
 
   return(
     <Background>
@@ -36,7 +31,6 @@ export function SignIn(){
 
           <RectButton 
             style={styles.containerButton} 
-            onPress={LoginPage}
           >
             <Text style={styles.titleButton}>
               Entrar
