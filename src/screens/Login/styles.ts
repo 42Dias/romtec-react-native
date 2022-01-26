@@ -5,8 +5,9 @@ import { theme } from '../../global/styles/theme';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    marginTop: 80,
   },
   image: {
     width: '100%',
@@ -37,14 +38,31 @@ export const styles = StyleSheet.create({
   containerButton: {
     width: '100%',
     height: 56,
-    backgroundColor: theme.colors.yellow,
+    backgroundColor: theme.colors.blackSecondary,
     borderRadius: 8,
     flexDirection: 'row',
     alignItems: 'center'
   },
   titleButton: {
     flex: 1,
-    color: theme.colors.textButtonBlack,
+    color: theme.colors.heading,
+    fontFamily: theme.fonts.text500,
+    fontSize: 15,
+    fontWeight: 'bold',
+    textAlign: 'center',    
+  },
+  containerButtonPassword: {
+    width: '100%',
+    height: 56,
+    backgroundColor: theme.colors.blackSecondary,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  titleButtonPassword: {
+    flex: 1,
+    color: theme.colors.heading,
     fontFamily: theme.fonts.text500,
     fontSize: 15,
     fontWeight: 'bold',
@@ -62,6 +80,32 @@ export const styles = StyleSheet.create({
   titleButtonRegister: {
     flex: 1,
     color: theme.colors.heading,
+    fontFamily: theme.fonts.text500,
+    fontSize: 15,
+    fontWeight: 'bold',
+    textAlign: 'center',    
+  },
+  containerButtonBack: {
+    height: 52,
+    width: 52,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    top: 47,
+  },
+  containerButtonLogin: {
+    width: '100%',
+    height: 56,
+    backgroundColor: theme.colors.yellow,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  titleButtonLogin: {
+    flex: 1,
+    color: theme.colors.textButtonBlack,
     fontFamily: theme.fonts.text500,
     fontSize: 15,
     fontWeight: 'bold',

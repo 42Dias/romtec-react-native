@@ -5,7 +5,7 @@ export const theme = {
   
     bg: '#1B1925',
     bgSecond: '#1C1A26',
-    
+
     textButtonBlack: '#1B1925',
     blackSecondary: '#252332',
    
