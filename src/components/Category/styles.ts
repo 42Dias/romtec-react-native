@@ -3,20 +3,23 @@ import { theme } from '../../global/styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    width: 104,
-    height: 120,
+    width: 224,
+    height: 220,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     borderRadius: 8,
     marginRight: 8,
   },
   content: {
-    width: 100,
-    height: 116,
+    width: 220,
+    height: 226,
     borderRadius: 8,
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
-    paddingVertical: 20
+    paddingVertical: 20,
+    padding: 5,
+    backgroundColor: '#252332'
+
   },
   title: {
     fontFamily: theme.fonts.title700,

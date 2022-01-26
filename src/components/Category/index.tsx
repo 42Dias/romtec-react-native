@@ -9,6 +9,7 @@ import { theme } from '../../global/styles/theme';
 
 type Props = RectButtonProps & {
   title: string;
+  desc: string;
   icon: React.FC<SvgProps>;
   hasCheckBox?: boolean;
   checked?: boolean;
@@ -16,6 +17,7 @@ type Props = RectButtonProps & {
 
 export function Category({
   title,
+  desc,
   icon: Icon,
   checked = false,
   hasCheckBox = false,
@@ -41,13 +43,18 @@ export function Category({
           }
 
           <Icon 
-              width={48} 
-              height={48}
+              width={28} 
+              height={28}
           />
 
           <Text style={styles.title}>
             { title }
           </Text>
+
+          <Text style={styles.title}>
+            { desc }
+          </Text>
+
         </LinearGradient>
       </LinearGradient>
     </RectButton>
