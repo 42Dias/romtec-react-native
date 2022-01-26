@@ -86,13 +86,13 @@ export const styles = StyleSheet.create({
     textAlign: 'center',    
   },
   containerButtonBack: {
-    height: 48,
-    width: 48,
+    height: 52,
+    width: 52,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
-    top: 37,
+    top: 47,
   },
   containerButtonLogin: {
     width: '100%',

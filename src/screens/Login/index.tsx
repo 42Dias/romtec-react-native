@@ -17,6 +17,10 @@ export function Login (){
     navigation.navigate('Welcome');
   }
 
+  function HomePage() {
+    navigation.navigate('Home');
+  }
+
   return(
     <Background>
       <View style={styles.container}>     
@@ -24,15 +28,15 @@ export function Login (){
         <View style={styles.content}>
           
           <RectButton 
-            style={styles.containerButtonBack} 
             onPress={WelcomePage}
+            style={styles.containerButtonBack} 
           >
             <MaterialCommunityIcons 
               name="keyboard-backspace"
-              size={35}
-              color={theme.colors.yellow}
-            />
-          </RectButton>
+              size={35} 
+              color={theme.colors.yellow} 
+            /> 
+          </RectButton> 
 
           <Text style={styles.title}>
             Login
@@ -61,7 +65,7 @@ export function Login (){
 
           <RectButton 
             style={styles.containerButtonLogin} 
-            // onPress={LoginPage}
+            onPress={HomePage}
           >
             <Text style={styles.titleButtonLogin}>
               Entrar

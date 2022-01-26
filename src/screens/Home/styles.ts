@@ -5,16 +5,18 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  header: {
+  // header: {
+  //   width: '100%',
+  //   paddingHorizontal: 24,
+  //   flexDirection: 'row',
+  //   justifyContent: 'space-between',
+  //   marginTop: getStatusBarHeight() + 26,
+  //   marginBottom: 42,
+  // },
+  image: {
     width: '100%',
-    paddingHorizontal: 24,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: getStatusBarHeight() + 26,
-    marginBottom: 42,
+    height: 450,
+    position: 'relative',
+    bottom: 140,
   },
-  matches: {    
-    marginTop: 24,
-    marginLeft: 24
-  }
 });
