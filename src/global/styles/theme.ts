@@ -5,7 +5,11 @@ export const theme = {
   
     bg: '#1B1925',
     bgSecond: '#1C1A26',
-
+    secondary50: '#1C1A26',
+    secondary70: '#1C1A26',
+    secondary85: '#1C1A26',
+    secondary40: '#1C1A26',
+    secondary100: '#1C1A26',
     textButtonBlack: '#1B1925',
     blackSecondary: '#252332',
    

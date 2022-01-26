@@ -34,6 +34,10 @@ export function AppRoutes() {
         component={Login}
       />
       <Screen 
+        name="Login"
+        component={Login}
+      />
+      <Screen 
         name="Home"
         component={Home}
       />
