@@ -29,7 +29,7 @@ export function Login (){
           >
             <MaterialCommunityIcons 
               name="keyboard-backspace"
-              size={24}
+              size={35}
               color={theme.colors.yellow}
             />
           </RectButton>
@@ -49,10 +49,10 @@ export function Login (){
           </RectButton>
 
           <RectButton 
-            style={styles.containerButton} 
+            style={styles.containerButtonPassword} 
           >
             <TextInput
-              style={styles.titleButton}
+              style={styles.titleButtonPassword}
               placeholder="Sua senha"
               secureTextEntry={true}
               placeholderTextColor="#fff"
@@ -60,10 +60,10 @@ export function Login (){
           </RectButton>
 
           <RectButton 
-            style={styles.containerButton} 
+            style={styles.containerButtonLogin} 
             // onPress={LoginPage}
           >
-            <Text style={styles.titleButton}>
+            <Text style={styles.titleButtonLogin}>
               Entrar
             </Text>
           </RectButton>
