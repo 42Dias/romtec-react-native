@@ -1,22 +1,24 @@
-import React from 'react';
+import React from 'react'
 import { 
   View, 
   Text, 
   Image,
-  Button,
-} from 'react-native';
-import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
-import IllustrationImg from '../../assets/illustration.png';
-import { styles } from './styles';
+} from 'react-native'
+import { RectButton } from 'react-native-gesture-handler'
+import IllustrationImg from '../../assets/illustration.png'
+import { styles } from './styles'
 
-import { Background } from '../../components/Background';
-import { useNavigation } from '@react-navigation/native';
+import { Background } from '../../components/Background'
+import { useNavigation } from '@react-navigation/native'
 
 export function Welcome(){
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
   function LoginPage() {
     navigation.navigate('Login')
+
+  function RegisterPage() {
+    navigation.navigate('Register')
   }
 
   return(
@@ -42,8 +44,10 @@ export function Welcome(){
               Entrar
             </Text>
           </RectButton>
+          
           <RectButton 
             style={styles.containerButtonRegister} 
+            onPress={RegisterPage}
           >
             <Text style={styles.titleButtonRegister}>
               Cadastrar
@@ -53,5 +57,5 @@ export function Welcome(){
         </View>
       </View>
     </Background>
-  );
+  )
 }
