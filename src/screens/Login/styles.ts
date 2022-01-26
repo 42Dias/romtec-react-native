@@ -77,14 +77,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20
   },
-  titleButtonRegister: {
-    flex: 1,
-    color: theme.colors.heading,
-    fontFamily: theme.fonts.text500,
-    fontSize: 15,
-    fontWeight: 'bold',
-    textAlign: 'center',    
-  },
   containerButtonBack: {
     height: 52,
     width: 52,

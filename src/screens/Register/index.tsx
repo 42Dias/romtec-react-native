@@ -105,14 +105,14 @@ export function Register() {
         name="password"
       />
 
-        <RectButton 
-          style={styles.button}
-          onPress={() => handleSubmit(onSubmit)}
-        >
-          <Text>
-            Cadastrar
-          </Text>
-        </RectButton>
+          <RectButton 
+            style={styles.containerButtonregister} 
+            onPress={() => handleSubmit(onSubmit)}
+          >
+            <Text style={styles.titleButtonRegister}>
+              Cadastrar
+            </Text>
+          </RectButton>
       </View>
     </Background>
   )
