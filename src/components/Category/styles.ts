@@ -16,8 +16,8 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'flex-start',
     justifyContent: 'space-between',
-    paddingVertical: 20,
-    padding: 5,
+    paddingVertical: 40,
+    padding: 8,
     backgroundColor: '#252332'
 
   },

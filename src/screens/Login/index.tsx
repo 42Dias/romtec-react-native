@@ -30,7 +30,7 @@ export function Login (){
           <RectButton 
             onPress={WelcomePage}
             style={styles.containerButtonBack} 
-          >
+          > 
             <MaterialCommunityIcons 
               name="keyboard-backspace"
               size={35} 
