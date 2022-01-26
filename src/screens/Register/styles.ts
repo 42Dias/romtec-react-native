@@ -18,13 +18,14 @@ export const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
   },
-  button: {
-    marginTop: 40,
-    color: 'white',
-    height: 40,
-    backgroundColor: theme.colors.yellow,
-    borderRadius: 4,
+  containerButtonregister: {
     width: '80%',
+    height: 56,
+    backgroundColor: theme.colors.yellow,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 20,
   },
   label: {
     color: 'white',
@@ -44,8 +45,16 @@ export const styles = StyleSheet.create({
   },
   title: {
     marginTop: -60,
-    padding: 40,
+    padding: 30,
     color: 'white',
     fontSize: 18,
-  }
+  },
+  titleButtonRegister: {
+    flex: 1,
+    color: theme.colors.bg,
+    fontFamily: theme.fonts.text500,
+    fontSize: 15,
+    fontWeight: 'bold',
+    textAlign: 'center',    
+  },
 })
