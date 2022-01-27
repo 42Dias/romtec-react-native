@@ -57,4 +57,37 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',    
   },
+  containerButton: {
+    width: '100%',
+    height: 56,
+    backgroundColor: theme.colors.blackSecondary,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  titleButton: {
+    flex: 1,
+    color: theme.colors.heading,
+    fontFamily: theme.fonts.text500,
+    fontSize: 15,
+    fontWeight: 'bold',
+    textAlign: 'center',    
+  },
+  containerButtonPassword: {
+    width: '100%',
+    height: 56,
+    backgroundColor: theme.colors.blackSecondary,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  titleButtonPassword: {
+    flex: 1,
+    color: theme.colors.heading,
+    fontFamily: theme.fonts.text500,
+    fontSize: 15,
+    fontWeight: 'bold',
+    textAlign: 'center',    
+  },
 })
