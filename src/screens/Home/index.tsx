@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { Image, View, Text, ScrollView } from 'react-native';
-import { Image, View, FlatList } from 'react-native';
 import HomeImage from './../../assets/homeimage.png';
 import { Background } from '../../components/Background';
 import { styles } from './styles';

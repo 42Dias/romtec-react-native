@@ -51,7 +51,9 @@ export function Category({
             { title }
           </Text>
 
-          <Text style={styles.desc}>
+          <Text style={styles.title}>
+            { desc }
+          </Text>
 
         </LinearGradient>
       </LinearGradient>
