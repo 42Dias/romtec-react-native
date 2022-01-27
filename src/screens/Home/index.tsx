@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { Image, View, Text, ScrollView } from 'react-native';
 import { Image, View, FlatList } from 'react-native';
 import HomeImage from './../../assets/homeimage.png';
 import { Background } from '../../components/Background';
@@ -14,8 +15,8 @@ import { ListHeader } from '../../components/ListHeader';
 import { ButtonAdd } from '../../components/ButtonAdd';
 import { Profile } from '../../components/Profile';
 import { Load } from '../../components/Load';
-
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
+import { NavOpen } from '../../components/NavOpen';
 
 export function Home() {
   const [category, setCategory] = useState('');
@@ -23,7 +24,6 @@ export function Home() {
   const [appointments, setAppointments] = useState<AppointmentProps[]>([]);
 
   const navigation = useNavigation();
-
 
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId);
@@ -55,24 +55,27 @@ export function Home() {
   },[category]));
 
   return (
-    <Background>  
-      <View style={styles.container} >
-        <Image 
-          source={HomeImage} 
-          style={styles.image} 
-          resizeMode="cover"
-        /> 
-      </View>
-      {/* <View style={styles.header}>
-        <Profile />
-        <ButtonAdd onPress={handleAppointmentCreate} />
-      </View> */}
-    
-      <CategorySelect 
-        categorySelected={category}
-        setCategory={handleCategorySelect}
-      />
+    <Background>   
+      <ScrollView>
+        <View style={styles.container} >
+          <Image 
+            source={HomeImage} 
+            style={styles.image} 
+            resizeMode="cover"
+          /> 
+        </View>
 
+        <View style={styles.container}>
+          <Text style={styles.titleSwiper}>Etapas</Text>
+        </View>
+
+        <CategorySelect 
+          categorySelected={category}
+          setCategory={handleCategorySelect}
+        />
+      </ScrollView>
+      <NavOpen />
     </Background>
+
   );  
 }

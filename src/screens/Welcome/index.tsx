@@ -16,6 +16,7 @@ export function Welcome(){
 
   function LoginPage() {
     navigation.navigate('Login')
+  }
 
   function RegisterPage() {
     navigation.navigate('Register')
