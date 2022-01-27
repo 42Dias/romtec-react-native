@@ -19,10 +19,14 @@ export const styles = StyleSheet.create({
     paddingVertical: 40,
     padding: 8,
     backgroundColor: '#252332'
-
   },
   title: {
     fontFamily: theme.fonts.title700,
+    color: theme.colors.heading,
+    fontSize: 18,
+    marginTop: 15
+  },
+  desc: {
     color: theme.colors.heading,
     fontSize: 15,
     marginTop: 15

@@ -51,7 +51,7 @@ export function Category({
             { title }
           </Text>
 
-          <Text style={styles.title}>
+          <Text style={styles.desc}>
             { desc }
           </Text>
 

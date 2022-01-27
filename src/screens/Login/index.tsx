@@ -26,7 +26,6 @@ export function Login (){
       <View style={styles.container}>     
 
         <View style={styles.content}>
-          
           <RectButton 
             onPress={WelcomePage}
             style={styles.containerButtonBack} 

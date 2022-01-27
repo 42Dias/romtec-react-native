@@ -19,6 +19,13 @@ export const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 15
   },
+  titleSwiper: {
+    fontFamily: theme.fonts.title700,
+    color: theme.colors.heading,
+    fontSize: 22,
+    position: 'relative',
+    top: 90,
+  },
   matches: {    
     marginTop: 24,
     marginLeft: 24
