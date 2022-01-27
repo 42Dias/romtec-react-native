@@ -52,8 +52,6 @@ export function Category({
           </Text>
 
           <Text style={styles.desc}>
-            { desc }
-          </Text>
 
         </LinearGradient>
       </LinearGradient>

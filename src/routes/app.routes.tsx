@@ -10,6 +10,7 @@ import { AppointmentCreate } from '../screens/AppointmentCreate';
 import { Welcome } from '../screens/Welcome';
 import { Login } from '../screens/Login';
 import { CloseMenu } from '../screens/CloseMenu';
+import { Register } from '../screens/Register';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -23,6 +24,20 @@ export function AppRoutes() {
         name="Welcome"
         component={Welcome}
       />
+
+      <Screen 
+        name="Register"
+        component={Register}
+      />
+
+      <Screen 
+        name="Login"
+        component={Login}
+      />
+      <Screen 
+        name="Login"
+        component={Login}
+      />
       <Screen 
         name="Login"
         component={Login}
@@ -31,6 +46,7 @@ export function AppRoutes() {
         name="Home"
         component={Home}
       />
+
       <Screen 
         name="CloseMenu"
         component={CloseMenu}
@@ -39,6 +55,7 @@ export function AppRoutes() {
         name="AppointmentDetails"
         component={AppointmentDetails}
       />
+      
       <Screen 
         name="AppointmentCreate"
         component={AppointmentCreate}

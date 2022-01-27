@@ -77,9 +77,27 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20
   },
-  titleButtonRegister: {
+  containerButtonBack: {
+    height: 52,
+    width: 52,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    top: 47,
+  },
+  containerButtonLogin: {
+    width: '100%',
+    height: 56,
+    backgroundColor: theme.colors.yellow,
+    borderRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  titleButtonLogin: {
     flex: 1,
-    color: theme.colors.heading,
+    color: theme.colors.textButtonBlack,
     fontFamily: theme.fonts.text500,
     fontSize: 15,
     fontWeight: 'bold',
