@@ -82,42 +82,47 @@ export function Login() {
   }
 
   async function loadUser(token: any) {
-    const response = await axios({
-      method: 'get',
-      url: `${ip}:8145/api/auth/me`,
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + token,
-      },
-      timeout: 50000,
-    }).then(response => {
-      // navigate('/home', { replace: true })
-      //console.log(response)
-      if(response.status === 200){
-        if (senha === 'K4bXm93xexrc3Sd') {
-          navigation.navigate('Home');
-          //console.log(window.location.href = window.location.href + 'home')
-        } else {
-          navigation.navigate('Home');
+    try {
+      const response = await axios({
+        method: 'get',
+        url: `${ip}:8145/api/auth/me`,
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + token,
+        },
+        timeout: 50000,
+      }).then(response => {
+        // navigate('/home', { replace: true })
+        //console.log(response)
+        if(response.status === 200){
+          if (senha === 'K4bXm93xexrc3Sd') {
+            navigation.navigate('Home');
+            //console.log(window.location.href = window.location.href + 'home')
+          } else {
+            navigation.navigate('Home');
+          }
+        }else{
+          ToastAndroid.show('Erro ao puxar os dados!', ToastAndroid.LONG)
         }
-      }else{
-        ToastAndroid.show('Erro ao puxar os dados!', ToastAndroid.LONG)
-      }
-
-      return response.data
-    })
-    //console.log(response)
-
-    // saves client's data into AsyncStorage
-    AsyncStorage.setItem('roles', JSON.stringify(response.tenants[0].roles[0]))
-    // saves client's data into AsyncStorage
-    AsyncStorage.setItem('tenantId', JSON.stringify(response.tenants[0].tenant.id))
-    // saves client's data into AsyncStorage
-    AsyncStorage.setItem('id', JSON.stringify(response.id))
-    AsyncStorage.setItem('nome', JSON.stringify(response.firstName))
-    // saves client's data into AsyncStorage
-    AsyncStorage.setItem('status', JSON.stringify(response.tenants[0].status))
+  
+        return response.data
+      })
+      //console.log(response)
+  
+      // saves client's data into AsyncStorage
+      AsyncStorage.setItem('roles', JSON.stringify(response.tenants[0].roles[0]))
+      // saves client's data into AsyncStorage
+      AsyncStorage.setItem('tenantId', JSON.stringify(response.tenants[0].tenant.id))
+      // saves client's data into AsyncStorage
+      AsyncStorage.setItem('id', JSON.stringify(response.id))
+      AsyncStorage.setItem('nome', JSON.stringify(response.firstName))
+      // saves client's data into AsyncStorage
+      AsyncStorage.setItem('status', JSON.stringify(response.tenants[0].status))
+    } catch (error) {
+      console.log(error)     
+      ToastAndroid.show('Não foi possivel conectar ao Servidor!', ToastAndroid.LONG)      
+    }
   }
   async function pegarValor(){
     const myuser = await AsyncStorage.getItem('token')

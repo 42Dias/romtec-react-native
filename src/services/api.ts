@@ -10,8 +10,8 @@ export const status = AsyncStorage.getItem('status')/*?.replace(/"/g, '')*/
 export const Email = AsyncStorage.getItem('email')/*?.replace(/"/g, '')*/
 export const nome = AsyncStorage.getItem('nome')/*?.replace(/"/g, '')*/
 export const password = AsyncStorage.getItem('password')/*?.replace(/"/g, '')*/
-//export const ip = 'http://localhost' 
-export let ip = "https://projetos.42dias.com.br";//servidor 
+export const ip = 'http://192.168.0.100' 
+//export let ip = "https://projetos.42dias.com.br";//servidor 
 
 export const api = axios.create({
   baseURL: ip + ':8145/api/tenant/' + tenantId + '/',
