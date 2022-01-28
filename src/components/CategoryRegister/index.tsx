@@ -15,7 +15,7 @@ type Props = RectButtonProps & {
   checked?: boolean;
 }
 
-export function Category({
+export function CategoryRegister({
   title,
   desc,
   icon: Icon,
@@ -27,36 +27,19 @@ export function Category({
 
   return(
     <RectButton {...rest}>
-      <LinearGradient
+      <View
         style={styles.container}
-        colors={[secondary50, secondary70]}
       >
-        <LinearGradient 
-          style={[styles.content, { opacity: checked ? 1 : 0.5 }]}
-          colors={[ checked ? secondary85 : secondary50, secondary40 ]}
+        <View 
+          style={[styles.content]}
         >
-          {
-            hasCheckBox &&
-            <View style={
-              checked ? styles.checked : styles.check
-            }/>
-          }
-
           <Icon 
-              width={28} 
-              height={28}
+            width={247} 
+            height={194}
+            style={styles.image}
           />
-
-          <Text style={styles.title}>
-            { title }
-          </Text>
-
-          <Text style={styles.desc}>
-            { desc }
-          </Text>
-
-        </LinearGradient>
-      </LinearGradient>
+        </View>
+      </View>
     </RectButton>
   );
 }

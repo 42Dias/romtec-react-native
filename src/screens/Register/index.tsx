@@ -36,16 +36,16 @@ export function Register() {
   return (
     <Background>
       <View style={styles.container}>
-          <RectButton 
-            onPress={WelcomePage}
-            style={styles.containerButtonBack} 
-          >
-            <MaterialCommunityIcons 
-              name="keyboard-backspace"
-              size={24}
-              color={theme.colors.yellow}
-            />
-          </RectButton>
+        <RectButton 
+          onPress={WelcomePage}
+          style={styles.containerButtonBack} 
+        >
+          <MaterialCommunityIcons 
+            name="keyboard-backspace"
+            size={24}
+            color={theme.colors.yellow}
+          />
+        </RectButton>
           
         <Text 
           style={styles.title} 
@@ -100,19 +100,19 @@ export function Register() {
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
+            secureTextEntry={true}
           />
         )}
         name="password"
       />
-
-          <RectButton 
-            style={styles.containerButtonregister} 
-            onPress={() => handleSubmit(onSubmit)}
-          >
-            <Text style={styles.titleButtonRegister}>
-              Cadastrar
-            </Text>
-          </RectButton>
+        <RectButton 
+          style={styles.containerButtonregister} 
+          onPress={() => handleSubmit(onSubmit)}
+        >
+          <Text style={styles.titleButtonRegister}>
+            Cadastrar
+          </Text>
+        </RectButton>
       </View>
     </Background>
   )

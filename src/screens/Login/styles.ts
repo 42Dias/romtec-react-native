@@ -84,7 +84,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
-    top: 47,
+    left: '10%',
+    zIndex: 999
   },
   containerButtonLogin: {
     width: '100%',

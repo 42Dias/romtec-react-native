@@ -23,12 +23,12 @@ export const styles = StyleSheet.create({
   title: {
     fontFamily: theme.fonts.title700,
     color: theme.colors.heading,
-    fontSize: 18,
+    fontSize: 15,
     marginTop: 15
   },
   desc: {
     color: theme.colors.heading,
-    fontSize: 15,
+    fontSize: 13,
     marginTop: 15
   },
   check: {
