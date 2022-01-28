@@ -23,9 +23,7 @@ export function Login (){
 
   return(
     <Background>
-      <View style={styles.container}>     
-
-        <View style={styles.content}>
+      <View style={styles.container}>    
           <RectButton 
             onPress={WelcomePage}
             style={styles.containerButtonBack} 
@@ -35,7 +33,10 @@ export function Login (){
               size={35} 
               color={theme.colors.yellow} 
             /> 
-          </RectButton> 
+          </RectButton>  
+
+        <View style={styles.content}>
+
 
           <Text style={styles.title}>
             Login
