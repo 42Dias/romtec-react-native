@@ -117,19 +117,19 @@ export function Register() {
   return (
     <Background>
       <View style={styles.container}>
-        <RectButton
+        <RectButton 
           onPress={WelcomePage}
-          style={styles.containerButtonBack}
+          style={styles.containerButtonBack} 
         >
-          <MaterialCommunityIcons
+          <MaterialCommunityIcons 
             name="keyboard-backspace"
             size={24}
             color={theme.colors.yellow}
           />
         </RectButton>
-
-        <Text
-          style={styles.title}
+          
+        <Text 
+          style={styles.title} 
         >
           Cadastro
         </Text>
@@ -181,6 +181,7 @@ export function Register() {
             onBlur={onBlur}
             onChangeText={onChange}
             value={value}
+            secureTextEntry={true}
           />
         )}
         name="password"

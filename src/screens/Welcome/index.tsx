@@ -19,6 +19,7 @@ export function Welcome(){
   const navigation = useNavigation()
 
   function LoginPage() {
+    console.log('Entrou')
     navigation.navigate('Login')
   }
 
@@ -68,7 +69,7 @@ export function Welcome(){
     }
   }
   useEffect(() => {
-    pegarValor()
+    //pegarValor()
   }, [])
   return(
     <Background>

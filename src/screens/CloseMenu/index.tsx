@@ -1,14 +1,10 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { Image, View, Text, ScrollView } from 'react-native';
-import HomeImage from './../../assets/homeimage.png';
 import { Background } from '../../components/Background';
 import { styles } from './styles';
-import { useNavigation, useFocusEffect } from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { theme } from '../../global/styles/theme';
-import { CategorySelect } from '../../components/CategorySelect';
-import { Appointment, AppointmentProps } from '../../components/Appointment';
 
 
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
@@ -17,40 +13,16 @@ import { NavClose } from '../../components/NavClose';
 import { RectButton } from 'react-native-gesture-handler';
 
 export function CloseMenu() {
-  const [category, setCategory] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [appointments, setAppointments] = useState<AppointmentProps[]>([]);
 
   const navigation = useNavigation();
 
-  function handleCategorySelect(categoryId: string) {
-    categoryId === category ? setCategory('') : setCategory(categoryId);
-  } 
-  
-  function handleAppointmentDetails(guildSelected: AppointmentProps) {
-    navigation.navigate('AppointmentDetails', { guildSelected });
-  } 
-  
-  function handleAppointmentCreate() {
-    navigation.navigate('AppointmentCreate');
-  } 
-  
-  async function loadAppointments() {
-    const response = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
-    const storage: AppointmentProps[] = response ? JSON.parse(response) : [];
-
-    if(category){
-      setAppointments(storage.filter(item => item.category === category));
-    }else{
-      setAppointments(storage)
-    }
-    
-    setLoading(false);
+  function PageHome() {
+    navigation.navigate('Home')
   }
 
-  useFocusEffect(useCallback(() => {
-    loadAppointments();
-  },[category]));
+  function AppRegistrationsPage() {
+    navigation.navigate('AppRegistrations')
+  }
 
   return (
     <Background>   
@@ -58,7 +30,7 @@ export function CloseMenu() {
         <View style={styles.container}> 
           <View style={styles.content}> 
             <RectButton 
-              // onPress={WelcomePage} 
+              onPress={PageHome} 
               style={styles.containerButtonBack} 
             > 
               <MaterialCommunityIcons 
@@ -71,11 +43,11 @@ export function CloseMenu() {
             </RectButton>
 
             <RectButton 
-              // onPress={WelcomePage} 
+              onPress={AppRegistrationsPage} 
               style={styles.containerButtonBack} 
             > 
               <MaterialCommunityIcons 
-                name="home-outline"
+                name="file-document-outline"
                 size={35} 
                 color={theme.colors.yellow}
                 style={styles.iconButton}
@@ -88,7 +60,7 @@ export function CloseMenu() {
               style={styles.containerButtonBack}
             > 
               <MaterialCommunityIcons 
-                name="home-outline"
+                name="cog"
                 size={35} 
                 color={theme.colors.yellow} 
                 style={styles.iconButton}
@@ -101,7 +73,7 @@ export function CloseMenu() {
               style={styles.containerButtonBack}
             > 
               <MaterialCommunityIcons 
-                name="home-outline"
+                name="bag-checked"
                 size={35} 
                 color={theme.colors.yellow} 
                 style={styles.iconButton}
@@ -114,7 +86,7 @@ export function CloseMenu() {
               style={styles.containerButtonBack}
             > 
               <MaterialCommunityIcons 
-                name="home-outline"
+                name="pin-outline"
                 size={35} 
                 color={theme.colors.yellow} 
                 style={styles.iconButton}
@@ -127,7 +99,7 @@ export function CloseMenu() {
               style={styles.containerButtonBack}
             > 
               <MaterialCommunityIcons 
-                name="home-outline"
+                name="account"
                 size={35} 
                 color={theme.colors.yellow} 
                 style={styles.iconButton}

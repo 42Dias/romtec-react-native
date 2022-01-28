@@ -127,7 +127,7 @@ export function Login() {
   async function pegarValor(){
     const myuser = await AsyncStorage.getItem('token')
     console.log(myuser)
-    loadUser(myuser?.replace(/"/g, ''))
+    loadUser(myuser)
   }
   useEffect(() => {
     pegarValor()
@@ -139,19 +139,20 @@ export function Login() {
   }, [])
   return (
     <Background>
-      <View style={styles.container}>
-
-        <View style={styles.content}>
-          <RectButton
+      <View style={styles.container}>    
+          <RectButton 
             onPress={WelcomePage}
             style={styles.containerButtonBack}
           >
             <MaterialCommunityIcons
               name="keyboard-backspace"
-              size={35}
-              color={theme.colors.yellow}
-            />
-          </RectButton>
+              size={35} 
+              color={theme.colors.yellow} 
+            /> 
+          </RectButton>  
+
+        <View style={styles.content}>
+
 
           <Text style={styles.title}>
             Login
