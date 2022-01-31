@@ -53,7 +53,7 @@ export function Home() {
   async function pegarValor(){
     const myuser = await AsyncStorage.getItem('token')
     console.log(myuser)
-    loadUser(myuser)
+    loadUser(myuser?.replace(/"/g, ''))
   }
   async function loadUser(token: any) {
     try {

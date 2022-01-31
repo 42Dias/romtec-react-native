@@ -126,8 +126,11 @@ export function Login() {
   }
   async function pegarValor(){
     const myuser = await AsyncStorage.getItem('token')
-    console.log(myuser)
-    loadUser(myuser)
+    console.log(myuser?.replace(/"/g, ''))
+    if(myuser){
+      loadUser(myuser?.replace(/"/g, ''))
+    }
+    
   }
   useEffect(() => {
     pegarValor()
