@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import { Image, View, Text, ScrollView } from 'react-native';
+import { Image, View, Text, ScrollView, StatusBar } from 'react-native';
+import { WebView } from 'react-native-webview';
 import HomeImage from './../../assets/homeimage.png';
 import { Background } from '../../components/Background';
 import { styles } from './styles';
@@ -46,28 +47,41 @@ export function AppRegistrations() {
     loadAppointments();
   },[category]));
 
+  const ROMTEC = 'https://projetos.42dias.com.br/romtec/#/'
+
   return (
-    <Background>   
-      <ScrollView>
-        <View style={styles.container} >
-          <Image 
-            source={HomeImage} 
-            style={styles.image} 
-            resizeMode="cover"
-          /> 
-        </View>
+    // <Background>   
+    //   <ScrollView>
+    //     <View style={styles.container} >
+    //       <Image 
+    //         source={HomeImage} 
+    //         style={styles.image} 
+    //         resizeMode="cover"
+    //       /> 
+    //     </View>
 
-        <View style={styles.container}>
-          <Text style={styles.titleSwiper}>Cadastros</Text>
-        </View>
+    //     <View style={styles.container}>
+    //       <Text style={styles.titleSwiper}>Cadastros</Text>
+    //     </View>
 
-        <CategorySelectRegister 
-          categorySelected={category}
-          setCategory={handleCategorySelect}
+    //     <CategorySelectRegister 
+    //       categorySelected={category}
+    //       setCategory={handleCategorySelect}
+    //     />
+    //   </ScrollView>
+    //   <NavOpen />
+    // </Background>
+
+    <View>
+      <StatusBar />
+
+      <View style={{ width: '100%', height: '100%' }}>
+        <WebView
+          source={{ uri: ROMTEC }}
         />
-      </ScrollView>
-      <NavOpen />
-    </Background>
+        <NavOpen />
+      </View>
+    </View>
 
   );  
 }
