@@ -121,7 +121,7 @@ import { AppointmentProps } from '../../components/Appointment';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 import { NavOpen } from '../../components/NavOpen';
 import { CategorySelectRegister } from '../../components/CategorySelectRegister';
-import Local from 'react-native-geolocation-service';
+import Local from '@react-native-community/geolocation';
 
 export function Welcome() {
   const [category, setCategory] = useState('');
