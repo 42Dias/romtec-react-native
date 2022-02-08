@@ -75,7 +75,7 @@ export function Login() {
         setLoading(false)
       }
     }).catch(res => {
-      //console.log(res.response.data)
+      console.log(res.response.data)
       ToastAndroid.show(res.response.data, ToastAndroid.LONG)
       setLoading(false)
     })
