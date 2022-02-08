@@ -14,8 +14,8 @@ export const styles = StyleSheet.create({
     position: 'relative',
     bottom: 140,
   },
-  content: {    
-    marginTop: -120,    
+  content: {
+    marginTop: -120,
     paddingHorizontal: 50
   },
   title: {
@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 40,
     fontFamily: theme.fonts.title700,
-    lineHeight: 40 
+    lineHeight: 40
   },
   containerButton: {
     width: '100%',
@@ -39,7 +39,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.text500,
     fontSize: 15,
     fontWeight: 'bold',
-    textAlign: 'center',    
+    textAlign: 'center',
   },
   containerButtonRegister: {
     width: '100%',
@@ -56,6 +56,39 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.text500,
     fontSize: 15,
     fontWeight: 'bold',
-    textAlign: 'center',    
+    textAlign: 'center',
   },
+
+  text: {
+
+    fontSize: 28
+
+  },
+  button: {
+    marginLeft: 40,
+    marginTop: 15,
+    backgroundColor: '#007bff',
+    borderColor: '#007bff',
+    width: '80%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 40,
+    borderRadius: 10,
+    marginBottom: 15
+
+
+  },
+  textButton: {
+
+    color: 'white',
+    fontSize: 20
+
+  },
+
+  textLocation: {
+
+    fontSize: 20
+
+  }
+
 });

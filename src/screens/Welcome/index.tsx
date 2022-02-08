@@ -50,11 +50,11 @@
 //         }else{
 //           ToastAndroid.show('Erro ao puxar os dados!', ToastAndroid.LONG)
 //         }
-  
+
 //         return response.data
 //       })
 //       //console.log(response)
-  
+
 //       // saves client's data into AsyncStorage
 //       AsyncStorage.setItem('roles', JSON.stringify(response.tenants[0].roles[0]))
 //       // saves client's data into AsyncStorage
@@ -94,7 +94,7 @@
 //               Entrar
 //             </Text>
 //           </RectButton>
-          
+
 // //           <RectButton 
 //             style={styles.containerButtonRegister} 
 //             onPress={RegisterPage}
@@ -103,14 +103,14 @@
 //               Cadastrar
 //             </Text>
 //           </RectButton>
-                              
+
 //         </View>
 //       </View>
 //     </Background>
 //   )
 // }
 import React, { useState, useCallback } from 'react';
-import { Image, View, Text, ScrollView, StatusBar } from 'react-native';
+import { Image, View, Text, ScrollView, StatusBar, TouchableOpacity, Alert } from 'react-native';
 import { WebView } from 'react-native-webview';
 import HomeImage from './../../assets/homeimage.png';
 import { Background } from '../../components/Background';
@@ -121,43 +121,79 @@ import { AppointmentProps } from '../../components/Appointment';
 import { COLLECTION_APPOINTMENTS } from '../../configs/database';
 import { NavOpen } from '../../components/NavOpen';
 import { CategorySelectRegister } from '../../components/CategorySelectRegister';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
+import MapView from 'react-native-maps';
+import { Button } from '../../components/Button';
 
 export function Welcome() {
   const [category, setCategory] = useState('');
   const [loading, setLoading] = useState(true);
   const [appointments, setAppointments] = useState<AppointmentProps[]>([]);
-
+  const [location, setLocation] = useState(0.0);
+  const [latitude, setLatitude] = useState(0.0);
+  const [longitude, setLongitude] = useState(0.0);
+  const [accuracy, setaccuracy] = useState(0.0);
+  const [errorMsg, setErrorMsg] = useState('');
   const navigation = useNavigation();
 
   function handleCategorySelect(categoryId: string) {
     categoryId === category ? setCategory('') : setCategory(categoryId);
-  } 
-  
+  }
+
   function handleAppointmentDetails(guildSelected: AppointmentProps) {
     navigation.navigate('AppointmentDetails', { guildSelected });
-  } 
-  
+  }
+
   function handleAppointmentCreate() {
     navigation.navigate('AppointmentCreate');
-  } 
-  
+  }
+
   async function loadAppointments() {
     const response = await AsyncStorage.getItem(COLLECTION_APPOINTMENTS);
     const storage: AppointmentProps[] = response ? JSON.parse(response) : [];
 
-    if(category){
+    if (category) {
       setAppointments(storage.filter(item => item.category === category));
-    }else{
+    } else {
       setAppointments(storage)
     }
-    
+
     setLoading(false);
   }
 
+  function getLocal() {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      Location.enableNetworkProviderAsync()
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+      let l = await Location.getProviderStatusAsync()
+      console.log(l)
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location.coords.latitude)
+      setLatitude(location.coords.latitude);
+      setLongitude(location.coords.longitude);
+      console.log(location.coords)
+      setaccuracy(location.coords.accuracy!)
+    })();
+  }
   useFocusEffect(useCallback(() => {
     loadAppointments();
-  },[category]));
+    getLocal()
 
+  }, [category]));
+
+  let text = 'Localizando..';
+  let precisao = null
+  if (errorMsg) {
+    text = errorMsg;
+  } else if (location) {
+    text = latitude + ", " + longitude;
+    precisao = accuracy
+  }
   const ROMTEC = 'https://projetos.42dias.com.br/romtec/#/'
 
   return (
@@ -190,9 +226,31 @@ export function Welcome() {
         <WebView
           source={{ uri: ROMTEC }}
         />
+         <MapView
+         style={{ width: '100%', height: '50%' }}
+        initialRegion={{
+          latitude: latitude,
+          longitude: longitude,
+          latitudeDelta: 0.000922,
+          longitudeDelta: 0.000421
+        }}
+        showsUserLocation={true}
+        zoomEnabled={true}
+        loadingEnabled={true}
+        mapType='hybrid'
+      >
+      </MapView>
+        <TouchableOpacity
+          onPress={getLocal}
+          style={styles.button}>
+          <Text style={styles.textButton}>Obter localização</Text>
+        </TouchableOpacity>
+        <Text style={{ marginLeft: 120 }} >{text}</Text>
+        <Text style={{ marginLeft: 160 }} >Precisão :{precisao}</Text>
         {/* <NavOpen /> */}
       </View>
+     
     </View>
 
-  );  
+  );
 }
