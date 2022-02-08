@@ -1,16 +1,14 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { styles } from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
-import MenuIcon from './../../assets/menu-icon.png';
-
 
 export function NavOpen() {
   const navigation = useNavigation();
   
   function NavOpenMenu() {
-    navigation.navigate('CloseMenu');
+    navigation.navigate('PhasesSelect');
   } 
 
   return (
@@ -19,11 +17,7 @@ export function NavOpen() {
         onPress={NavOpenMenu}
         style={styles.containerButtonBack} 
       > 
-        <Image 
-          source={MenuIcon} 
-          // style={styles.image} 
-          resizeMode="cover"
-        /> 
+        <Text style={styles.textTitle}>Executar travessia</Text>
       </RectButton> 
     </View>
   );  

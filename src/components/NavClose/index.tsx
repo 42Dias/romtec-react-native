@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { styles } from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
@@ -19,11 +19,7 @@ export function NavClose() {
         onPress={GoBackPage}
         style={styles.containerButtonBack} 
       > 
-        <Image 
-          source={CloseIcon} 
-          // style={styles.image} 
-          resizeMode="cover"
-        /> 
+        <Text style={styles.textTitle}>Fechar travessia</Text>
       </RectButton> 
     </View>
   );  
