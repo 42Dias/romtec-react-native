@@ -12,6 +12,8 @@ import { Login } from '../screens/Login';
 import { CloseMenu } from '../screens/CloseMenu';
 import { Register } from '../screens/Register';
 import { AppRegistrations } from '../screens/AppRegistrations';
+import { PhasesSelect } from '../screens/PhasesSelect';
+import { Phases } from '../screens/Phases';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -35,18 +37,22 @@ export function AppRoutes() {
         name="Login"
         component={Login}
       />
+
       <Screen 
         name="Home"
         component={Home}
       />
+
       <Screen 
         name="AppRegistrations"
         component={AppRegistrations}
       />
+
       <Screen 
         name="CloseMenu"
         component={CloseMenu}
       />
+
       <Screen 
         name="AppointmentDetails"
         component={AppointmentDetails}
@@ -55,6 +61,16 @@ export function AppRoutes() {
       <Screen 
         name="AppointmentCreate"
         component={AppointmentCreate}
+      />
+
+      <Screen 
+        name="PhasesSelect"
+        component={PhasesSelect}
+      />
+
+      <Screen 
+        name="Phases"
+        component={Phases}
       />
     </Navigator>
   )
