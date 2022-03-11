@@ -1,29 +1,24 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { styles } from './styles';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
-import MenuIcon from './../../assets/menu-icon.png';
 
 
 export function NavOpen() {
   const navigation = useNavigation();
   
-  function NavOpenMenu() {
-    navigation.navigate('CloseMenu');
-  } 
+  function CrossingsOpen() {
+    navigation.navigate('Crossings');
+  }
 
   return (
     <View style={styles.navOpen}>
       <RectButton 
-        onPress={NavOpenMenu}
+        onPress={CrossingsOpen}
         style={styles.containerButtonBack} 
       > 
-        <Image 
-          source={MenuIcon} 
-          // style={styles.image} 
-          resizeMode="cover"
-        /> 
+        <Text style={styles.title}>Iniciar</Text>
       </RectButton> 
     </View>
   );  

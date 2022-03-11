@@ -11,13 +11,17 @@ export const styles = StyleSheet.create({
     height: 50
   },
   containerButtonBack: {
-    height: 70,
-    width: 70,
-    borderRadius: 35,
+    height: 47,
+    width: 185,
+    borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
     bottom: 25,
     backgroundColor: theme.colors.yellow,
   },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 16,
+  }
 });

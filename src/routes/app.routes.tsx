@@ -9,9 +9,10 @@ import { AppointmentDetails } from '../screens/AppointmentDetails';
 import { AppointmentCreate } from '../screens/AppointmentCreate';
 import { Welcome } from '../screens/Welcome';
 import { Login } from '../screens/Login';
-import { CloseMenu } from '../screens/CloseMenu';
+import { Crossings } from '../screens/Crossings';
 import { Register } from '../screens/Register';
 import { AppRegistrations } from '../screens/AppRegistrations';
+import { Phases } from '../screens/Phases';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -35,18 +36,22 @@ export function AppRoutes() {
         name="Login"
         component={Login}
       />
+
       <Screen 
         name="Home"
         component={Home}
       />
+
       <Screen 
         name="AppRegistrations"
         component={AppRegistrations}
       />
+      
       <Screen 
-        name="CloseMenu"
-        component={CloseMenu}
+        name="Crossings"
+        component={Crossings}
       />
+      
       <Screen 
         name="AppointmentDetails"
         component={AppointmentDetails}
@@ -56,6 +61,12 @@ export function AppRoutes() {
         name="AppointmentCreate"
         component={AppointmentCreate}
       />
+
+      <Screen 
+        name="Phases"
+        component={Phases}
+      />
+
     </Navigator>
   )
 }
